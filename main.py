@@ -70,48 +70,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""from langchain_core.messages import HumanMessage
-from langchain_openai import ChatOpenAI
-from langchain.tools import tool
-from langgraph.prebuilt import create_react_agent
-from dotenv import load_dotenv
-
-load_dotenv()  # We have loaded the OPENAI API KEY in the Environment to load the Model
-
-
-# This is the Main Function
-def main():
-    model = ChatOpenAI(
-        temperature=0
-    )  # We initialize a Model - imported from langchain_openai
-
-    tools = []  # This sets up the architecture for the ai agent
-    agent_executer = create_react_agent(model, tools)
-
-    print("Welcome to the AI Agent! Type 'exit' to quit.")
-
-    while True:
-        user_input = input("\nYou :").strip()  # <-- Asking the User some input
-
-        if user_input == "quit":
-            break
-
-        print("\nAssistant :", end="")
-
-        # Now we take the responce from the agent and stream it out and print in on the console
-
-        # We are using the stream() method to get the response from our llm using the agent_executer
-        # chunk is a part of a response comming from the agent
-
-        for chunk in agent_executer.stream(
-            {"messages": [HumanMessage(content=user_input)]}
-        ):  # <-- Send the user input to the Agent
-            if "agent" in chunk and "messages" in chunk["agent"]:
-                for message in chunk["agent"]["messages"]:
-                    print(message.content, end="")
-        print()
-
-
-if __name__ == "__main__":
-    main()"""
+    
